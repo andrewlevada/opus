@@ -1,18 +1,19 @@
 export interface Activity {
 	id: string;
-	title: Localized<string>;
+	title: Localized<string> | string;
 	short?: Localized<string>;
 	description: Localized<string>;
 	tags: Tag[];
 
 	// TODO: Make dates validatable
 	started: string;
-	ended: string;
+	ended?: string;
 
 	isTestList?: boolean;
+	hidden?: boolean;
 
 	links?: {
-		label: Localized<string>;
+		label: Localized<string> | string;
 		url: string;
 	}[];
 }
